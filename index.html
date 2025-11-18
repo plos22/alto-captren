@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cabañas Los Andes - Arriendo y Reservas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">Cabañas Los Andes</div>
+    <nav class="nav-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#cabanas">Cabañas</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#tarifas">Tarifas</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#reserva" class="btn-nav">Reservar</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <h1>Arriendo de cabañas para 4 y 6 personas</h1>
+      <p>Escápate a la naturaleza y reserva tu estadía con un 50% anticipado. El resto lo cancelas al llegar, en efectivo o tarjeta.</p>
+      <a href="#reserva" class="btn-primario">Reservar ahora</a>
+    </div>
+  </section>
+
+  <!-- NUESTRAS CABAÑAS -->
+  <section id="cabanas" class="section">
+    <h2>Nuestras cabañas</h2>
+    <p class="section-subtitle">Elige la cabaña que mejor se adapta a tu viaje.</p>
+
+    <div class="cards">
+      <article class="card">
+        <h3>Cabaña 4 personas</h3>
+        <p>Ideal para familias pequeñas o grupos de amigos.</p>
+        <ul>
+          <li>2 dormitorios</li>
+          <li>1 baño completo</li>
+          <li>Cocina equipada</li>
+          <li>Calefacción</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Cabaña 6 personas</h3>
+        <p>Perfecta para grupos más grandes o familias numerosas.</p>
+        <ul>
+          <li>3 dormitorios</li>
+          <li>2 baños</li>
+          <li>Cocina equipada</li>
+          <li>Living amplio</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA LA RESERVA -->
+  <section class="section section-alt">
+    <h2>Cómo funciona la reserva</h2>
+    <div class="steps">
+      <div class="step">
+        <span class="step-number">1</span>
+        <h3>Elige tu cabaña y fechas</h3>
+        <p>Selecciona la cabaña (4 o 6 personas) y las fechas de tu estadía.</p>
+      </div>
+      <div class="step">
+        <span class="step-number">2</span>
+        <h3>Paga el 50% anticipado</h3>
+        <p>Realiza un pago del 50% para dejar confirmada tu reserva.</p>
+      </div>
+      <div class="step">
+        <span class="step-number">3</span>
+        <h3>Cancela el resto al llegar</h3>
+        <p>El 50% restante se paga al hacer check-in, en efectivo o tarjeta.</p>
+      </div>
+    </div>
+    <p class="note">* Más adelante aquí agregaremos los métodos de pago en línea (Stripe) y las políticas detalladas.</p>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="section">
+    <h2>Servicios incluidos</h2>
+    <div class="services">
+      <div class="service-item">WiFi</div>
+      <div class="service-item">Estacionamiento</div>
+      <div class="service-item">Ropa de cama</div>
+      <div class="service-item">Parrilla</div>
+      <div class="service-item">Televisión</div>
+      <div class="service-item">Calefacción</div>
+    </div>
+  </section>
+
+  <!-- TARIFAS -->
+  <section id="tarifas" class="section section-alt">
+    <h2>Tarifas por noche</h2>
+    <p class="section-subtitle">Estos son ejemplos, más adelante los ajustamos con los valores reales.</p>
+    <table class="tabla-tarifas">
+      <thead>
+        <tr>
+          <th>Cabaña</th>
+          <th>Temporada baja</th>
+          <th>Temporada alta</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cabaña 4 personas</td>
+          <td>Por definir</td>
+          <td>Por definir</td>
+        </tr>
+        <tr>
+          <td>Cabaña 6 personas</td>
+          <td>Por definir</td>
+          <td>Por definir</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section id="ubicacion" class="section">
+    <h2>Ubicación</h2>
+    <p>Ubicadas en [zona aproximada], rodeadas de naturaleza, perfectas para desconectarse.</p>
+    <p>Más adelante aquí podemos incrustar un mapa de Google Maps.</p>
+  </section>
+
+  <!-- FORMULARIO DE RESERVA -->
+  <section id="reserva" class="section section-reserva">
+    <h2>Solicitar reserva</h2>
+    <p class="section-subtitle">Déjanos tus datos y te contactaremos para confirmar disponibilidad y pago del 50%.</p>
+
+    <form class="form-reserva">
+      <div class="form-group">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" placeholder="Tu nombre">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" placeholder="tucorreo@ejemplo.com">
+      </div>
+
+      <div class="form-group">
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" placeholder="+56 9 1234 5678">
+      </div>
+
+      <div class="form-group">
+        <label for="cabana">Tipo de cabaña</label>
+        <select id="cabana">
+          <option value="4">Cabaña 4 personas</option>
+          <option value="6">Cabaña 6 personas</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="fecha-llegada">Fecha de llegada</label>
+        <input type="date" id="fecha-llegada">
+      </div>
+
+      <div class="form-group">
+        <label for="fecha-salida">Fecha de salida</label>
+        <input type="date" id="fecha-salida">
+      </div>
+
+      <div class="form-group">
+        <label for="personas">Número de personas</label>
+        <input type="number" id="personas" min="1" max="6" value="2">
+      </div>
+
+      <button type="submit" class="btn-primario btn-full">Enviar solicitud</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Cabañas Los Andes. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
