@@ -463,51 +463,51 @@ input::placeholder {
   display: grid; /* solo el activo se muestra */
 }
 
-@media (max-width: 768px) {
-  .cabin-slide.active {
-    grid-template-columns: 1fr;
-    padding: 1.5rem;
-  }
-}
+/* Imagen grande + mini-galería */
 
-
-.carousel-window {
-  flex: 1;
-  position: relative;
+.cabin-image {
+  width: 100%;
   overflow: hidden;
-  min-height: 260px;
-}
-
-/* Slides */
-
-.cabin-slide {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: 2rem;
-  padding: 2rem;
-  background: var(--color-card);
   border-radius: var(--radius);
-  opacity: 0;
-  transform: translateX(20px);
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.cabin-slide.active {
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: auto;
 }
 
 .cabin-image img {
   width: 100%;
-  height: 100%;
-  max-height: 280px;
-  object-fit: cover;
+  height: auto;        /* se adapta a la anchura */
+  max-height: 450px;   /* limita que no sea gigante */
+  object-fit: cover;   /* llena bien el espacio sin deformarse */
   border-radius: var(--radius);
+  margin-bottom: 1rem;
+  transition: opacity 0.3s ease;
 }
+
+.thumbs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.thumbs img {
+  width: 90px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.thumbs img:hover {
+  opacity: 0.9;
+}
+
+.thumbs img.active {
+  opacity: 1;
+  border-color: var(--color-primario);
+}
+
+/* Texto de la cabaña */
 
 .cabin-info h3 {
   font-size: 1.4rem;
@@ -578,90 +578,21 @@ input::placeholder {
 /* Responsive */
 
 @media (max-width: 768px) {
-  .cabin-slide {
+  .cabin-slide.active {
     grid-template-columns: 1fr;
     padding: 1.5rem;
   }
 
   .cabin-image img {
-    max-height: 220px;
-  }
-
-  .carousel-btn {
-    display: none; /* en celu usamos solo dots */
-  }
-}
-
-/* ===== Mini-galería ===== */
-
-.cabin-image img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: var(--radius);
-  margin-bottom: 1rem;
-  transition: opacity 0.3s ease;
-}
-
-.thumbs {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.thumbs img {
-  width: 90px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 8px;
-  cursor: pointer;
-  opacity: 0.6;
-  border: 2px solid transparent;
-  transition: opacity 0.2s ease, border-color 0.2s ease;
-}
-
-.thumbs img:hover {
-  opacity: 0.9;
-}
-
-.thumbs img.active {
-  opacity: 1;
-  border-color: var(--color-primario);
-}
-
-/* Responsive para celular */
-@media (max-width: 768px) {
-  .cabin-image img {
-    height: 220px;
+    max-height: 280px;
   }
 
   .thumbs img {
     width: 70px;
     height: 50px;
   }
-}
-/* ===== Ajuste real de altura de imagen ===== */
 
-.cabin-image {
-  width: 100%;
-  overflow: hidden;
-  border-radius: var(--radius);
-}
-
-.cabin-image img {
-  width: 100%;
-  
-  /* EL TRUCO MAGISTRAL: esto hace que adaptes la altura sin cortar */
-  height: auto;     
-  max-height: 450px;  /* o el número que quieras */
-  
-  object-fit: cover; /* mantiene proporción y llena el espacio */
-  border-radius: var(--radius);
-}
-
-/* Versión móvil */
-@media (max-width: 768px) {
-  .cabin-image img {
-    max-height: 280px;
+  .carousel-btn {
+    display: none; /* en celu usamos solo dots */
   }
 }
