@@ -2,11 +2,12 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Cabañas Alto Captren - Arriendo y Reservas</title>
+  <title>Alto Captren - Arriendo Cabañas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
   <!-- NAVBAR -->
   <header class="navbar">
     <div class="logo">Cabañas Alto Captren</div>
@@ -23,41 +24,81 @@
   <!-- HERO -->
   <section id="inicio" class="hero">
     <div class="hero-content">
-      <h1>Arriendo de cabañas para 4 y 6 personas</h1>
-      <p>Escápate a la naturaleza y reserva tu estadía con un 50% anticipado. El resto lo cancelas al llegar, en efectivo o tarjeta.</p>
+      <h1>Arriendo de cabañas para 4 y 6 personas maximo</h1>
+      <p>Escápate a la naturaleza y reserva tu estadía con un 40% anticipado. El resto lo cancelas al llegar, en efectivo o tarjeta.</p>
       <a href="#reserva" class="btn-primario">Reservar ahora</a>
     </div>
   </section>
 
   <!-- NUESTRAS CABAÑAS -->
-  <section id="cabanas" class="section">
-    <h2>Nuestras cabañas</h2>
-    <p class="section-subtitle">Elige la cabaña que mejor se adapta a tu viaje.</p>
+<section id="cabanas" class="section cabanas">
+  <h2>Nuestras cabañas</h2>
+  <p class="section-subtitle">
+    Elige la cabaña que mejor se adapta a tu viaje.
+  </p>
 
-    <div class="cards">
-      <article class="card">
-        <h3>Cabaña 4 personas</h3>
-        <p>Ideal para familias pequeñas o grupos de amigos.</p>
-        <ul>
-          <li>2 dormitorios</li>
-          <li>1 baño completo</li>
-          <li>Cocina equipada</li>
-          <li>Calefacción</li>
-        </ul>
-      </article>
+  <div class="cabin-carousel">
+    <button class="carousel-btn prev" aria-label="Cabaña anterior">‹</button>
 
-      <article class="card">
-        <h3>Cabaña 6 personas</h3>
-        <p>Perfecta para grupos más grandes o familias numerosas.</p>
-        <ul>
-          <li>3 dormitorios</li>
-          <li>2 baños</li>
-          <li>Cocina equipada</li>
-          <li>Living amplio</li>
-        </ul>
-      </article>
+    <div class="carousel-window">
+      <!-- Slide 1: Cabaña 4 personas -->
+      <article class="cabin-slide active">
+  <div class="cabin-image">
+    <img id="main-img-4" src="img/DSF1432.jpg" alt="Cabaña 4 personas">
+  </div>
+
+  <div class="thumbs">
+    <img src="img/DSF1432.jpg" data-target="main-img-4" class="thumb active">
+    <img src="img/DSF1432.jpg" data-target="main-img-4" class="thumb">
+    <img src="img/DSF1432.jpg" data-target="main-img-4" class="thumb">
+  </div>
+
+  <div class="cabin-info">
+    <h3>Cabaña 4 personas</h3>
+    <p>Ideal para familias pequeñas o grupos de amigos.</p>
+    <ul>
+      <li>3 dormitorios</li>
+      <li>1 baño completo</li>
+      <li>Cocina equipada</li>
+      <li>Televisión</li>
+    </ul>
+  </div>
+</article>
+      <!-- Slide 2: Cabaña 6 personas -->
+      <article class="cabin-slide">
+  <div class="cabin-image">
+    <img id="main-img-6" src="img/cabnieve.jpg" alt="Cabaña 6 personas">
+  </div>
+
+  <div class="thumbs">
+    <img src="img/DSF1432.jpg" data-target="main-img-6" class="thumb active">
+    <img src="img/DSF1432.jpg" data-target="main-img-6" class="thumb">
+    <img src="img/DSF1432.jpg" data-target="main-img-6" class="thumb">
+  </div>
+
+  <div class="cabin-info">
+    <h3>Cabaña 6 personas</h3>
+    <p>Perfecta para familias más grandes o grupos numerosos.</p>
+    <ul>
+      <li>3 dormitorios</li>
+      <li>1 baños</li>
+      <li>Cocina equipada</li>
+      <li>Television</li>
+    </ul>
+  </div>
+</article>
+
     </div>
-  </section>
+
+    <button class="carousel-btn next" aria-label="Siguiente cabaña">›</button>
+  </div>
+
+  <div class="carousel-dots">
+    <button class="dot active" data-index="0" aria-label="Ver cabaña 4 personas"></button>
+    <button class="dot" data-index="1" aria-label="Ver cabaña 6 personas"></button>
+  </div>
+</section>
+
 
   <!-- CÓMO FUNCIONA LA RESERVA -->
   <section class="section section-alt">
@@ -70,13 +111,13 @@
       </div>
       <div class="step">
         <span class="step-number">2</span>
-        <h3>Paga el 50% anticipado</h3>
-        <p>Realiza un pago del 50% para dejar confirmada tu reserva.</p>
+        <h3>Paga el 40% anticipado</h3>
+        <p>Realiza un pago del 40% para dejar confirmada tu reserva.</p>
       </div>
       <div class="step">
         <span class="step-number">3</span>
         <h3>Cancela el resto al llegar</h3>
-        <p>El 50% restante se paga al hacer check-in, en efectivo o tarjeta.</p>
+        <p>El 60% restante se paga al hacer check-in, en efectivo o tarjeta.</p>
       </div>
     </div>
     <p class="note">* Más adelante aquí agregaremos los métodos de pago en línea (Stripe) y las políticas detalladas.</p>
@@ -91,7 +132,7 @@
       <div class="service-item">Ropa de cama</div>
       <div class="service-item">Parrilla</div>
       <div class="service-item">Televisión</div>
-      <div class="service-item">Calefacción</div>
+      <div class="service-item">Combustion</div>
     </div>
   </section>
 
@@ -123,16 +164,54 @@
   </section>
 
   <!-- UBICACIÓN -->
-  <section id="ubicacion" class="section">
-    <h2>Ubicación</h2>
-    <p>Ubicadas en [zona aproximada], rodeadas de naturaleza, perfectas para desconectarse.</p>
-    <p>Más adelante aquí podemos incrustar un mapa de Google Maps.</p>
-  </section>
+<section id="ubicacion" class="section location">
+  <h2>Ubicación</h2>
+  <p class="section-subtitle">
+    Estamos ubicados en el sector Captren, a pocos KM del Parque Nacional Conguillío.
+  </p>
+
+  <div class="location-content">
+    <div class="location-text">
+      <h3>Cómo llegar</h3>
+      <p>
+        Puedes llegar en vehículo particular siguiendo la ruta hacia Curacautín y luego el desvío a Captrén.
+        El camino está señalizado y es apto para la mayoría de los vehículos en temporada normal.
+      </p>
+      <ul>
+        <li>⛰ Zona: Captren, Región de La Araucanía</li>
+        <li>🚗 Acceso: Camino pavimentado + ripio en buen estado</li>
+        <li>📍 Referencia: KM 19, cercano a entrada Parque Nacional Conguillío</li>
+      </ul>
+
+      <a
+        href="https://maps.app.goo.gl/ywH3Pxg6baj3ibKB8"
+        target="_blank"
+        rel="noopener"
+        class="btn-primario"
+      >
+        Ver ruta en Google Maps
+      </a>
+    </div>
+
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3121.2857484917026!2d-71.83302692513234!3d-38.52718077514549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzjCsDMxJzM3LjkiUyA3McKwNDknNDkuNiJX!5e0!3m2!1ses-419!2scl!4v1763561420494!5m2!1ses-419!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        width="600"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
 
   <!-- FORMULARIO DE RESERVA -->
   <section id="reserva" class="section section-reserva">
     <h2>Solicitar reserva</h2>
-    <p class="section-subtitle">Déjanos tus datos y te contactaremos para confirmar disponibilidad y pago del 50%.</p>
+    <p class="section-subtitle">Déjanos tus datos y te contactaremos para confirmar disponibilidad y pago del 40%.</p>
 
     <form class="form-reserva">
       <div class="form-group">
@@ -153,8 +232,8 @@
       <div class="form-group">
         <label for="cabana">Tipo de cabaña</label>
         <select id="cabana">
-          <option value="4">Cabaña 4 personas</option>
-          <option value="6">Cabaña 6 personas</option>
+          <option value="4">Cabaña MAX 4 personas</option>
+          <option value="6">Cabaña MAX 6 personas</option>
         </select>
       </div>
 
@@ -178,7 +257,8 @@
   </section>
 
   <footer class="footer">
-    <p>&copy; 2025 Cabañas Los Andes. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Cabañas Alto Captren. Todos los derechos reservados.</p>
   </footer>
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -384,3 +384,284 @@ input::placeholder {
   color: #bbf7d0;
 }
 
+.location {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.location-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.location-text {
+  flex: 1 1 280px;
+}
+
+.location-text ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0;
+}
+
+.location-text li {
+  margin-bottom: 0.4rem;
+}
+
+.map-container {
+  flex: 1 1 320px;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ===== Nuestras cabañas – Carrusel ===== */
+
+.cabanas {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cabin-carousel {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.carousel-window {
+  flex: 1;
+}
+
+/* Slides */
+
+.cabin-slide {
+  display: none; /* por defecto oculto */
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  background: var(--color-card);
+  border-radius: var(--radius);
+}
+
+.cabin-slide.active {
+  display: grid; /* solo el activo se muestra */
+}
+
+@media (max-width: 768px) {
+  .cabin-slide.active {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+  }
+}
+
+
+.carousel-window {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 260px;
+}
+
+/* Slides */
+
+.cabin-slide {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  background: var(--color-card);
+  border-radius: var(--radius);
+  opacity: 0;
+  transform: translateX(20px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cabin-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.cabin-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.cabin-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.cabin-info p {
+  margin-bottom: 0.75rem;
+}
+
+.cabin-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cabin-info li::before {
+  content: "• ";
+  color: var(--color-primario);
+}
+
+/* Botones flecha */
+
+.carousel-btn {
+  background: var(--color-card);
+  border: 1px solid var(--color-borde);
+  color: var(--color-texto);
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.carousel-btn:hover {
+  background: var(--color-primario-oscuro);
+  transform: translateY(-1px);
+}
+
+/* Dots */
+
+.carousel-dots {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.carousel-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: none;
+  background: var(--color-borde);
+  cursor: pointer;
+  transition: background 0.2s ease, width 0.2s ease;
+}
+
+.carousel-dots .dot.active {
+  background: var(--color-primario);
+  width: 22px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .cabin-slide {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+  }
+
+  .cabin-image img {
+    max-height: 220px;
+  }
+
+  .carousel-btn {
+    display: none; /* en celu usamos solo dots */
+  }
+}
+
+/* ===== Mini-galería ===== */
+
+.cabin-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.thumbs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.thumbs img {
+  width: 90px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.thumbs img:hover {
+  opacity: 0.9;
+}
+
+.thumbs img.active {
+  opacity: 1;
+  border-color: var(--color-primario);
+}
+
+/* Responsive para celular */
+@media (max-width: 768px) {
+  .cabin-image img {
+    height: 220px;
+  }
+
+  .thumbs img {
+    width: 70px;
+    height: 50px;
+  }
+}
+/* ===== Ajuste real de altura de imagen ===== */
+
+.cabin-image {
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.cabin-image img {
+  width: 100%;
+  
+  /* EL TRUCO MAGISTRAL: esto hace que adaptes la altura sin cortar */
+  height: auto;     
+  max-height: 450px;  /* o el número que quieras */
+  
+  object-fit: cover; /* mantiene proporción y llena el espacio */
+  border-radius: var(--radius);
+}
+
+/* Versión móvil */
+@media (max-width: 768px) {
+  .cabin-image img {
+    max-height: 280px;
+  }
+}
